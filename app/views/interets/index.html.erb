@@ -1,0 +1,33 @@
+<h1> Interet </h1>
+<table>
+    <thead>
+        <tr>
+            <th>titre</th>
+            <th>prio?</th>
+            <th>creer le</th>
+            <th>modifier le</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @interets.each do |interet| %>
+            <tr>
+                <td> <%=interet.title %> </td>
+                <td> <%=interet.prio %> </td>
+                <td> <%=interet.created_at%> </td>
+                <td> <%=interet.updated_at%> </td>
+                <td> <%= link_to 'Show', interet %> </td>
+                <td> <%= link_to 'Modifié', edit_interet_path(interet) %> </td>
+                <td> <%= link_to 'Supprimé', interet, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+
+
+            </tr>
+        <% end %>
+    </tbody>
+<table>
+
+<br />
+
+<%= link_to 'New', new_interet_path %>
+<br />
+<%= link_to 'CV', home_index_path %>

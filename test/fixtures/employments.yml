@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  soustitle: MyString
+  body: MyText
+  lieux: MyString
+  debut: 2021-02-28
+  fin: 2021-02-28
+  wip: false
+  tache1: MyString
+  tache2: MyString
+  tache3: MyString
+  prio: false
+
+two:
+  title: MyString
+  soustitle: MyString
+  body: MyText
+  lieux: MyString
+  debut: 2021-02-28
+  fin: 2021-02-28
+  wip: false
+  tache1: MyString
+  tache2: MyString
+  tache3: MyString
+  prio: false

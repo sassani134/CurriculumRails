@@ -1,0 +1,59 @@
+<%= form_with model: @employment do |f| %>
+
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title%>
+    </div>
+    <div class="field">
+        <%= f.label :soustitle %>
+        <%= f.text_field :soustitle%>
+    </div>
+
+    <div class="field">
+        <%= f.label :body %>
+        <%= f.text_area :body%>
+    </div>
+
+    <div class="field">
+        <%= f.label :lieux %>
+        <%= f.text_field :lieux%>
+    </div>
+
+    <div class="field">
+        <%= f.label :debut%>
+        <%= f.date_field :debut %>
+    </div>
+
+    <div class="field">
+        <%= f.label :fin%>
+        <%= f.date_field :fin %>
+    </div>
+
+    <div class="field">
+        <%= f.label :wip%>
+        <%= f.check_box :wip %>
+    </div>
+
+    <div class="field">
+        <%= f.label :tache1 %>
+        <%= f.text_field :tache1%>
+    </div>
+
+    <div class="field">
+        <%= f.label :tache2 %>
+        <%= f.text_field :tache2%>
+    </div>
+
+    <div class="field">
+        <%= f.label :tache3 %>
+        <%= f.text_field :tache3%>
+    </div>
+
+    <div class="field">
+        <%= f.label :prio%>
+        <%= f.check_box :prio %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>

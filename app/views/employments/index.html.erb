@@ -1,0 +1,46 @@
+<h1> Employments </h1>
+<table>
+    <thead>
+        <tr>
+            <th>titre</th>
+            <th>sous titre</th>
+            <th>body</th>
+            <th>debut</th>
+            <th>fin</th>
+            <th>wip</th>
+            <th>tache1</th>
+            <th>tache2</th>
+            <th>tache3</th>
+            <th>prio?</th>
+            <th>creer le</th>
+            <th>modifier le</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @employments.each do |employments| %>
+            <tr>
+                <td> <%=employments.title %> </td>
+                <td> <%=employments.soustitle%> </td>
+                <td> <%=employments.body%> </td>
+                <td> <%=employments.lieux%> </td>
+                <td> <%=employments.debut%> </td>
+                <td> <%=employments.fin%> </td>
+                <td> <%=employments.wip%> </td>
+                <td> <%=employments.prio %> </td>
+                <td> <%=employments.created_at%> </td>
+                <td> <%=employments.updated_at%> </td>
+                <td> <%= link_to 'Show', employments %> </td>
+                <td> <%= link_to 'Modifié', edit_employment_path(employments) %> </td>
+                <td> <%= link_to 'Supprimé', employments, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+
+            </tr>
+        <% end %>
+    </tbody>
+<table>
+
+<br />
+
+<%= link_to 'new', new_employment_path %>
+<br />
+<%= link_to 'CV', home_index_path %>

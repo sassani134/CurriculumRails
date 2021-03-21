@@ -1,0 +1,33 @@
+<h1> Competences </h1>
+<table>
+    <thead>
+        <tr>
+            <th>titre</th>
+            <th>point début</th>
+            <th>prio?</th>
+            <th>creer</th>
+            <th>modifié</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @competences.each do |competences| %>
+            <tr>
+                <td> <%=competences.title %> </td>
+                <td> <%=competences.point %> </td>
+                <td> <%=competences.prio %> </td>
+                <td> <%=competences.created_at %> </td>
+                <td> <%=competences.updated_at %> </td>
+                <td> <%= link_to 'Show', competences %> </td>
+                <td> <%= link_to 'Modifié', edit_competence_path(competences) %> </td>
+                <td> <%= link_to 'Supprimé', competences, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+<table>
+
+<br />
+
+<%= link_to 'new', new_competence_path%>
+<br />
+<%= link_to 'CV', home_index_path %>

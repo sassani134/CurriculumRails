@@ -1,0 +1,34 @@
+<h1> Certificats </h1>
+<table>
+    <thead>
+        <tr>
+            <th>titre</th>
+            <th>date début</th>
+            <th>date fin</th>
+            <th>wip?</th>
+            <th>prio?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @certificats.each do |certificats| %>
+            <tr>
+                <td> <%=certificats.title %> </td>
+                <td> <%=certificats.debut %> </td>
+                <td> <%=certificats.fin %> </td>
+                <td> <%=certificats.wip %> </td>
+                <td> <%=certificats.prio %> </td>
+                <td> <%= link_to 'Show', certificats %> </td>
+                <td> <%= link_to 'Modifié', edit_certificat_path(certificats) %> </td>
+                <td> <%= link_to 'Supprimé', certificats, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+
+            </tr>
+        <% end %>
+    </tbody>
+<table>
+
+<br />
+
+<%= link_to 'New Certificat', new_certificat_path %>
+<br />
+<%= link_to 'CV', home_index_path %>

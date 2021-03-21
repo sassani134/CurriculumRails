@@ -1,0 +1,29 @@
+<%= form_with model: @certificat do |f| %>
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title%>
+    </div>
+
+    <div class="field">
+        <%= f.label :debut%>
+        <%= f.date_field :debut %>
+    </div>
+
+    <div class="field">
+        <%= f.label :fin%>
+        <%= f.date_field :fin %>
+    </div>
+
+    <div class="field">
+        <%= f.label :wip%>
+        <%= f.check_box :wip %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :prio%>
+        <%= f.check_box :prio %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>

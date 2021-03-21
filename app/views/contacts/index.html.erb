@@ -1,0 +1,33 @@
+<h1> Contacts </h1>
+<table>
+    <thead>
+        <tr>
+            <th>titre</th>
+            <th>body</th>
+            <th>prio?</th>
+            <th>creer</th>
+            <th>modifié</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @contacts.each do |contacts| %>
+            <tr>
+                <td> <%=contacts.title %> </td>
+                <td> <%=contacts.body %> </td>
+                <td> <%=contacts.prio %> </td>
+                <td> <%=contacts.created_at%> </td>
+                <td> <%=contacts.updated_at%> </td>
+                <td> <%= link_to 'Show', contacts %> </td>
+                <td> <%= link_to 'Modifié', edit_contact_path(contacts) %> </td>
+                <td> <%= link_to 'Supprimé', contacts, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+<table>
+
+<br />
+
+<%= link_to 'new', new_contact_path %>
+<br />
+<%= link_to 'CV', home_index_path %>

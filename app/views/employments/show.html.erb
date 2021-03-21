@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @employment.title %>
+</p>
+
+<p>
+  <strong>Sous titre:</strong>
+  <%= @employment.soustitle %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @employment.body %>
+</p>
+
+<p>
+  <strong>Lieux:</strong>
+  <%= @employment.lieux %>
+</p>
+
+<p>
+  <strong>Debut:</strong>
+  <%= @employment.debut %>
+</p>
+
+
+<% if @employment.wip == true %>
+    <p>
+    <strong>wip:</strong>
+    <%= @employment.wip %>
+    </p>
+<% else %>
+    <p>
+    <strong>fin:</strong>
+    <%= @employment.fin %>
+    </p>
+<% end %>
+
+<% if @employment.tache3 == nil %>
+  <% if @employment.tache2 == nil %>
+        <p>
+            <strong>Tache1:</strong>
+            <%= @employment.tache1 %>
+        </p>
+        <% else %>
+        <p>
+            <strong>Tache1:</strong>
+            <%= @employment.tache1 %>
+        </p>
+        <p>
+            <strong>Tache2:</strong>
+            <%= @employment.tache2 %>
+        </p>
+  <% end %>
+  <% else %>
+    <p>
+        <strong>Tache1:</strong>
+        <%= @employment.tache1 %>
+    </p>
+
+    <p>
+        <strong>Tache2:</strong>
+        <%= @employment.tache2 %>
+    </p>
+
+    <p>
+        <strong>Tache3:</strong>
+        <%= @employment.tache3 %>
+    </p>
+<% end %>
+
+
+
+<p>
+  <strong>prio:</strong>
+  <%= @employment.prio %>
+</p>
+
+<%= link_to 'Edit', edit_employment_path(@employment) %> |
+
+<%= link_to 'Back', employments_path %>

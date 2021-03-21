@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @certificat.title %>
+</p>
+
+<p>
+  <strong>Debut:</strong>
+  <%= @certificat.debut %>
+</p>
+
+
+<% if @certificat.wip == true %>
+    <p>
+    <strong>wip:</strong>
+    <%= @certificat.wip %>
+    </p>
+<% else %>
+    <p>
+    <strong>fin:</strong>
+    <%= @certificat.fin %>
+    </p>
+<% end %>
+
+
+<p>
+  <strong>prio:</strong>
+  <%= @certificat.prio %>
+</p>
+
+<%= link_to 'Edit', edit_certificat_path(@certificat) %> |
+
+<%= link_to 'Back', certificats_path %>

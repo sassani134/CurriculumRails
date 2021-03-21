@@ -1,0 +1,103 @@
+<body>
+    <div id="conteneurAll">
+        <header id="conteneurHeader">
+            <h1>
+                Samuel ASSANI
+                Dévelopers Ruby on rails
+            </h1>
+            <p>
+                Je suis un jeune Dévelloppeur fullstack ruby on rails,auto-entrepreneur freelenace et je suis en train de
+                créer une seconde startup nommé Ashley. J'ai appris de nombreuse compétence en autodidacte dont react native.
+            </p>
+        </header>
+
+        <div class="place">
+            <div class="row">
+                <div class="column" id="column-left">
+                    <div class="box-top-left" id="contact-box">
+                        <span class="box-title">Contacts</span>
+                            <% @contactsPrio.each do |contactsPrio| %>
+                                <section>
+                                    <%=contactsPrio.body %>
+                                </section>
+                            <% end %>
+                            <span class="lien-plus"><%= link_to 'Voir plus ...', contacts_path%></span>
+                    </div>
+                    <div class="box-top-left" id="competence-box">
+                        <span class="box-title">Competences</span>
+                        <% @competencesPrio.each do |competencesPrio| %>
+                                <section>
+                                    <%=competencesPrio.title %>
+                                    <%competencesPrio.point.times do %>
+                                        <span>☆<span>
+                                    <% end %>
+                                </section>
+                            <% end %>
+                            <span class="lien-plus"><%= link_to 'Voir plus ...', competences_path%></span>
+                    </div>
+                    <div class="box-top-left" id="interets-box">
+                        <span class="box-title">Interets</span>
+                        <% @interetsPrio.each do |interetsPrio| %>
+                            <section>
+                                <%=interetsPrio.title %>
+                            </section>
+                        <% end %>
+                        <span class="lien-plus"><%= link_to 'Voir plus ...', interets_path%></span>
+                    </div>
+                </div>
+                <div class="column" id="column-right" >
+                    <div class="box-top-left">
+                        <span class="box-title">Experiance professionelles</span>
+                        <% @employmentsPrio.each do |employmentsPrio| %>
+                            <section>
+                                <h2><%=employmentsPrio.title %></h2>
+                                <br/>
+                                <%=employmentsPrio.soustitle %>
+                                <br/>
+                                <article><%=employmentsPrio.body %></article>
+                                <br/>
+                                <%=employmentsPrio.lieux %>
+                                <br/>
+                                <%=employmentsPrio.debut %>
+                                <% if employmentsPrio.wip == true || employmentsPrio.fin == nil %>
+                                    en cours.
+                                <% else %>
+                                    <%=employmentsPrio.fin %>
+                                <% end %>
+                                <br/>
+                                <% if employmentsPrio.tache1 == nil %>
+                                    <%= employmentsPrio.tache1 %>
+                                    <hr/>
+                                <% end %>
+                                <% if employmentsPrio.tache2 == nil %>
+                                    <%= employmentsPrio.tache2 %>
+                                    <hr/>
+                                <% end %>
+                                <% if employmentsPrio.tache3 == nil %>
+                                    <%= employmentsPrio.tache3 %>
+                                    <hr/>
+                                <% end %>
+                            </section>
+                        <% end %>
+                        <span class="lien-plus"><%= link_to 'Voir plus ...', employments_path%></span>
+                    </div>
+                    <div class="box-top-left">
+                        <span class="box-title">Certificats</span>
+                        <% @certificatsPrio.each do |certificatsPrio| %>
+                            <section>
+                                <h2><%=certificatsPrio.title %></h2>
+                                <%=certificatsPrio.debut %>
+                                <% if certificatsPrio.wip == true || certificatsPrio.fin == nil %>
+                                    en cours.
+                                <% else %>
+                                    <%=certificatsPrio.fin %>
+                                <% end %>
+                            <section>
+                        <% end %>
+                        <span class="lien-plus"><%= link_to 'Voir plus ...', certificats_path%></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

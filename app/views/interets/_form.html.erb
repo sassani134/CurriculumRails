@@ -1,0 +1,15 @@
+<%= form_with model: @interet do |f| %>
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title%>
+    </div>
+
+    <div class="field">
+        <%= f.label :prio%>
+        <%= f.check_box :prio %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
