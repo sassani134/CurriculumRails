@@ -30,17 +30,19 @@
                 <td> <%=employments.prio %> </td>
                 <td> <%=employments.created_at%> </td>
                 <td> <%=employments.updated_at%> </td>
-                <td> <%= link_to 'Show', employments %> </td>
-                <td> <%= link_to 'Modifié', edit_employment_path(employments) %> </td>
-                <td> <%= link_to 'Supprimé', employments, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
-
+                <% if admin_signed_in? %>
+                    <td> <%= link_to 'Show', employments %> </td>
+                    <td> <%= link_to 'Modifié', edit_employment_path(employments) %> </td>
+                    <td> <%= link_to 'Supprimé', employments, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+                <% end %>
             </tr>
         <% end %>
     </tbody>
 <table>
 
 <br />
-
-<%= link_to 'new', new_employment_path %>
-<br />
+<% if admin_signed_in? %>
+    <%= link_to 'new', new_employment_path %>
+    <br />
+<%end%>
 <%= link_to 'CV', home_index_path %>

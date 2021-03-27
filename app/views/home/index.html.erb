@@ -58,22 +58,22 @@
                                 <br/>
                                 <%=employmentsPrio.lieux %>
                                 <br/>
-                                <%=employmentsPrio.debut %>
+                                <%=employmentsPrio.debut.strftime("%d/%m/%y") %> -
                                 <% if employmentsPrio.wip == true || employmentsPrio.fin == nil %>
                                     en cours.
                                 <% else %>
-                                    <%=employmentsPrio.fin %>
+                                    <%=employmentsPrio.fin.strftime("%d/%m/%y") %>
                                 <% end %>
                                 <br/>
-                                <% if employmentsPrio.tache1 == nil %>
+                                <% if employmentsPrio.tache1 != nil %>
                                     <%= employmentsPrio.tache1 %>
                                     <hr/>
                                 <% end %>
-                                <% if employmentsPrio.tache2 == nil %>
+                                <% if employmentsPrio.tache2 != nil %>
                                     <%= employmentsPrio.tache2 %>
                                     <hr/>
                                 <% end %>
-                                <% if employmentsPrio.tache3 == nil %>
+                                <% if employmentsPrio.tache3 != nil %>
                                     <%= employmentsPrio.tache3 %>
                                     <hr/>
                                 <% end %>
@@ -85,12 +85,12 @@
                         <span class="box-title">Certificats</span>
                         <% @certificatsPrio.each do |certificatsPrio| %>
                             <section>
-                                <h2><%=certificatsPrio.title %></h2>
-                                <%=certificatsPrio.debut %>
+                                <h2 id="certificat-title"><%=certificatsPrio.title %></h2>
+                                <%=certificatsPrio.debut.strftime("%d/%m/%y") %> - 
                                 <% if certificatsPrio.wip == true || certificatsPrio.fin == nil %>
                                     en cours.
                                 <% else %>
-                                    <%=certificatsPrio.fin %>
+                                    <%=certificatsPrio.fin.strftime("%d/%m/%y") %>
                                 <% end %>
                             <section>
                         <% end %>

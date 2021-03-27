@@ -18,9 +18,11 @@
                 <td> <%=contacts.prio %> </td>
                 <td> <%=contacts.created_at%> </td>
                 <td> <%=contacts.updated_at%> </td>
-                <td> <%= link_to 'Show', contacts %> </td>
-                <td> <%= link_to 'Modifié', edit_contact_path(contacts) %> </td>
-                <td> <%= link_to 'Supprimé', contacts, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+                <% if admin_signed_in? %>
+                    <td> <%= link_to 'Show', contacts %> </td>
+                    <td> <%= link_to 'Modifié', edit_contact_path(contacts) %> </td>
+                    <td> <%= link_to 'Supprimé', contacts, method: :delete, data: { confirm: 'Confirmé suppression ?'} %> </td>
+                <%end%>
             </tr>
         <% end %>
     </tbody>
@@ -28,6 +30,8 @@
 
 <br />
 
-<%= link_to 'new', new_contact_path %>
-<br />
+<% if admin_signed_in? %>
+    <%= link_to 'new', new_contact_path %>
+    <br />
+<%end%>
 <%= link_to 'CV', home_index_path %>
