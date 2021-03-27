@@ -1,9 +1,13 @@
 class CompetencesController < ApplicationController
     before_action :set_competence, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, only: [:edit, :update, :destroy]
+    before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
     
     def index
       @competences = Competence.all
+      respond_to do |format|
+        format.html
+        format.json {render json: @competences}
+      end
     end
   
     def show

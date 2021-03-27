@@ -1,9 +1,14 @@
 class ContactsController < ApplicationController
     before_action :set_contact, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, only: [:edit, :update, :destroy]
+    before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
     
     def index
       @contacts = Contact.all
+
+      respond_to do |format|
+        format.html
+        format.json {render json: @contacts}
+      end
     end
   
     def show

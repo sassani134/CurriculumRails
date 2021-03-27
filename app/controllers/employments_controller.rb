@@ -1,9 +1,14 @@
 class EmploymentsController < ApplicationController
     before_action :set_employment, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, only: [:edit, :update, :destroy]
+    before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
 
     def index
       @employments = Employment.all
+
+      respond_to do |format|
+        format.html
+        format.json {render json: @employments}
+      end
     end
   
     def show

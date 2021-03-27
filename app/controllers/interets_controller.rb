@@ -1,9 +1,14 @@
 class InteretsController < ApplicationController
     before_action :set_interet, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, only: [:edit, :update, :destroy]
+    before_action :authenticate_admin!, only: [:new, :edit, :update, :destroy]
 
     def index
       @interets = Interet.all
+
+      respond_to do |format|
+        format.html
+        format.json {render json: @interets}
+      end
     end
   
     def show

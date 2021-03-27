@@ -6,6 +6,12 @@ class HomeController < ApplicationController
     @contactsPrio = Contact.where("prio = true")
     @competencesPrio = Competence.where("prio = true")
     @interetsPrio = Interet.where("prio = true")
+    @allModel = @employmentsPrio + @certificatsPrio + @contactsPrio + @competencesPrio + @interetsPrio
+        
+    respond_to do |format|
+      format.html
+      format.json {render json: @allModel}
+    end
   end
 
   private
