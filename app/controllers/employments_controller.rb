@@ -63,6 +63,6 @@ class EmploymentsController < ApplicationController
       end
   
       def employment_params
-        params.require(:employment).permit(:title, :soustitle, :body, :lieux, :devut, :fin , :wip, :tache1, :tache2, :tache3, :prio)
+        params.require(:employment).permit(:title, :soustitle, :body, :lieux, :debut, :fin , :wip, :tache1, :tache2, :tache3, :prio)
       end
 end
