@@ -40,7 +40,7 @@ class InteretsController < ApplicationController
     def update
       respond_to do |format|
         if @interet.update(interet_params)
-          format.html { redirect_to @interet.company, notice: 'Interet was successfully updated.' }
+          format.html { redirect_to @interet, notice: 'Interet was successfully updated.' }
           format.json { render :show, status: :ok, location: @interet }
         else
           format.html { render :edit }
