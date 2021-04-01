@@ -18,7 +18,7 @@
                         <span class="box-title">Contacts</span>
                             <% @contactsPrio.each do |contactsPrio| %>
                                 <section>
-                                    <%=contactsPrio.body %>
+                                    <%=link_to "#{contactsPrio.title}",contactsPrio.body %>
                                 </section>
                             <% end %>
                             <span class="lien-plus"><%= link_to 'Voir plus ...', contacts_path%></span>
@@ -51,10 +51,9 @@
                         <% @employmentsPrio.each do |employmentsPrio| %>
                             <section>
                                 <h2><%=employmentsPrio.title %></h2>
-                                <br/>
                                 <%=employmentsPrio.soustitle %>
                                 <br/>
-                                <article><%=employmentsPrio.body %></article>
+                                <article id="article-employment"><%=employmentsPrio.body %></article>
                                 <br/>
                                 <%=employmentsPrio.lieux %>
                                 <br/>
@@ -66,15 +65,15 @@
                                 <% end %>
                                 <br/>
                                 <% if employmentsPrio.tache1 != nil %>
-                                    <%= employmentsPrio.tache1 %>
+                                    <p class="employment-tache"> <%= employmentsPrio.tache1 %> </p>
                                     <hr/>
                                 <% end %>
                                 <% if employmentsPrio.tache2 != nil %>
-                                    <%= employmentsPrio.tache2 %>
+                                  <p class="employment-tache"> <%= employmentsPrio.tache2 %> </p>
                                     <hr/>
                                 <% end %>
                                 <% if employmentsPrio.tache3 != nil %>
-                                    <%= employmentsPrio.tache3 %>
+                                   <p class="employment-tache"> <%= employmentsPrio.tache3 %> </p>
                                     <hr/>
                                 <% end %>
                             </section>

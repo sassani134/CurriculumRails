@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-
-:any-link {
-    color: black;
-    font-weight: 900;
+:any-link{
     text-decoration: none;
+    color: black;
 }
+
+.lien-plus {
+    
+    font-weight: 900;
+}
+
 #conteneurHeader
 {
     padding-left: 20px 0;
@@ -86,3 +89,6 @@
     flex: 1;
 }
 
+.employment-tache{
+    font-size: x-small;
+}
