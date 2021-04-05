@@ -35,7 +35,7 @@ class CertificatsController < ApplicationController
     def update
       respond_to do |format|
         if @certificat.update(certificat_params)
-          format.html { redirect_to @certificat.company, notice: 'Certificat was successfully updated.' }
+          format.html { redirect_to @certificat, notice: 'Certificat was successfully updated.' }
           format.json { render :show, status: :ok, location: @certificat }
         else
           format.html { render :edit }

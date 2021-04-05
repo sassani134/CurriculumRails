@@ -39,7 +39,7 @@ class CompetencesController < ApplicationController
     def update
       respond_to do |format|
         if @competence.update(competence_params)
-          format.html { redirect_to @competence.company, notice: 'Competence was successfully updated.' }
+          format.html { redirect_to @competence, notice: 'Competence was successfully updated.' }
           format.json { render :show, status: :ok, location: @competence }
         else
           format.html { render :edit }

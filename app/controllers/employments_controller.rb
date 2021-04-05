@@ -40,7 +40,7 @@ class EmploymentsController < ApplicationController
     def update
       respond_to do |format|
         if @employment.update(employment_params)
-          format.html { redirect_to @employment.company, notice: 'Employment was successfully updated.' }
+          format.html { redirect_to @employment, notice: 'Employment was successfully updated.' }
           format.json { render :show, status: :ok, location: @employment }
         else
           format.html { render :edit }
