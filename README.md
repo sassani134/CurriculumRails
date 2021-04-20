@@ -1,24 +1,30 @@
-# README
+# Curriculum Vitae with Ruby on rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Resume on a responsive website that can send json data to an [expo project](https://github.com/sassani134/CurriculumExpo.git)
+## Installation
 
-Things you may want to cover:
+### It works only with this:
+on a terminal
+```bash
+git clone https://github.com/sassani134/CurriculumRails.git
+cd CurriculumRails
+bundle
+rails db:create
+rails db:migrate
+rails db:seed
+rails s
+```
 
-* Ruby version
+you can visit my own [resume](https://curriculum-rails.herokuapp.com/)
 
-* System dependencies
 
-* Configuration
+## Usage
+You can freely use it for your own resume or for educational purporse. Do not hesitate to change the styles
 
-* Database creation
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Database initialization
+Please make sure to update tests as appropriate.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
